@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Weather - Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌦 City Weather (Open-Meteo)</h1>
+
+        <!-- Search Form -->
+        <form method="POST">
+            <label for="city">City:</label>
+            <input id="city" type="text" name="city" placeholder="Enter city name (e.g., Chennai)" required autocomplete="off">
+            <button type="submit">Get Weather</button>
+        </form>
+
+        <!-- Error Message -->
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <!-- Weather Result -->
+        {% if weather %}
+        <section class="weather-box">
+            <h2>{{ weather.city }}, {{ weather.country }}</h2>
+            <p><strong>Temperature:</strong> {{ weather.temperature }}°C</p>
+            <p><strong>Wind Speed:</strong> {{ weather.windspeed }} km/h</p>
+            <p><strong>Condition:</strong> {{ weather.description }}</p>
+            <p><strong>Time:</strong> {{ weather.time }}</p>
+        </section>
+        {% endif %}
+
+        <!-- Search History -->
+        {% if history %}
+        <section class="history-box">
+            <h3>Recent Searches</h3>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>City</th>
+                        <th>Temperature (°C)</th>
+                        <th>Description</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for h in history %}
+                    <tr>
+                        <td>{{ h.city }}</td>
+                        <td>{{ h.temperature }}</td>
+                        <td>{{ h.description }}</td>
+                        <td>{{ h.time }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <!-- Clear History Button -->
+            <form method="POST" action="{{ url_for('clear_history') }}" 
+                  onsubmit="return confirm('Are you sure you want to clear all history?');">
+                <button type="submit">🧹 Clear History</button>
+            </form>
+        </section>
+        {% endif %}
+    </div>
+</body>
+</html>

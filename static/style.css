@@ -1,0 +1,150 @@
+/* 🌦 General Page Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* 🧱 Main Container */
+.container {
+    background: #ffffffee;
+    padding: 30px 40px;
+    margin-top: 60px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    width: 90%;
+}
+
+/* 🌤 Title */
+h1 {
+    text-align: center;
+    color: #1a1a1a;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* 🔍 Form Styling */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #0077ff;
+    box-shadow: 0 0 4px #0077ff66;
+}
+
+button {
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #005fd4;
+    transform: translateY(-1px);
+}
+
+/* ⚠️ Error Message */
+.error {
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* 🌡 Weather Box */
+.weather-box {
+    background: #f0f8ff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    text-align: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.weather-box h2 {
+    color: #0077ff;
+    margin-bottom: 10px;
+}
+
+.weather-box p {
+    margin: 4px 0;
+    font-size: 16px;
+}
+
+/* 📜 History Section */
+.history-box {
+    margin-top: 30px;
+}
+
+.history-box h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+/* 🧾 Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #0077ff;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #eef5ff;
+}
+
+/* 🧹 Clear Button */
+.history-box form {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.history-box button {
+    background-color: #e74c3c;
+}
+
+.history-box button:hover {
+    background-color: #c0392b;
+}
